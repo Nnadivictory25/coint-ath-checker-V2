@@ -71,6 +71,19 @@
 	}
 
 	async function refresh() {
+		const TEN_HOURS_IN_MS = 10 * 60 * 60 * 1000; // 10 hours in milliseconds
+
+		const lastRefreshed = localStorage.getItem('lastRefreshed');
+		const now = new Date().getTime();
+
+		if (lastRefreshed && now - +lastRefreshed < TEN_HOURS_IN_MS) {
+			const remainingTime = TEN_HOURS_IN_MS - (now - +lastRefreshed);
+			const hours = Math.floor(remainingTime / (60 * 60 * 1000));
+			const minutes = Math.floor((remainingTime % (60 * 60 * 1000)) / (60 * 1000));
+			toast.info(`Please wait ${hours} hours and ${minutes} minutes before refreshing again.`);
+			return;
+		}
+
 		const promises = $addedWalletCoins.map(async (coin) => {
 			const coinData = await getCoinData(coin.id);
 			return { id: coin.id, ath_value: coinData.ath };
@@ -93,6 +106,7 @@
 
 			if (browser) {
 				localStorage.setItem('walletCoins', JSON.stringify($addedWalletCoins));
+				localStorage.setItem('lastRefreshed', now.toString());
 			}
 		} catch (error) {
 			console.error(error);
