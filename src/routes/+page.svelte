@@ -119,7 +119,7 @@
 
 <svelte:head>
 	<title>Portfolio All Time High Value Checker Tool</title>
-	<meta name="description" content="A tool to check the all time high valueof your portfolio " />
+	<meta name="description" content="A tool to check the all time high value of your portfolio " />
 </svelte:head>
 
 <nav class="gradient-bg z-20 flex flex-col justify-center gap-2 text-xl md:flex-row">

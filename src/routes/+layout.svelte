@@ -1,6 +1,9 @@
 <script lang="ts">
 	import '../app.css';
 	import { Toaster } from '$lib/components/ui/sonner';
+
+	const title = 'Portfolio All Time High Value Checker Tool';
+	const description = 'A tool to check the all time high value of your portfolio';
 </script>
 
 <slot />
@@ -43,6 +46,24 @@
 		>
 	</a>
 </footer>
+
+<svelte:head>
+	<meta name="description" content={description} />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:image" content="https://portfolio-ath-checker-v2.pages.dev/og.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="627" />
+	<meta property="og:image:alt" content="Portfolio ALL Time High Checker Tool" />
+	<meta property="og:type" content="website" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="twitter:domain" content="portfolio-ath-checker-v2.pages.dev" />
+	<meta property="twitter:url" content="https://portfolio-ath-checker-v2.pages.dev" />
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content="https://portfolio-ath-checker-v2.pages.dev/og.png" />
+</svelte:head>
 
 <style>
 	footer {
