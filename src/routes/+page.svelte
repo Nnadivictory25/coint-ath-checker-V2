@@ -253,7 +253,11 @@
 		</div>
 
 		<!-- * WALLET COINS -->
-		<h1 class="mt-7 flex items-center gap-2 pl-2 md:mt-0 md:justify-center md:pl-0">
+		<h1
+			class="mt-7 flex items-center gap-2 pl-2 md:mt-0 {$addedWalletCoins.length === 0
+				? 'justify-center'
+				: 'md:justify-center'} md:pl-0"
+		>
 			WALLET <svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="24"
