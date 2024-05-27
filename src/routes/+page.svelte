@@ -189,7 +189,11 @@
 
 	<div class="relative mx-auto mb-14 w-full md:w-1/2">
 		<!-- * ACTION BUTTONS -->
-		<div class="absolute right-2 top-10 flex items-center gap-5 md:top-3">
+		<div
+			class="absolute {$addedWalletCoins.length === 0
+				? 'hidden'
+				: ''} right-2 top-10 flex items-center gap-5 md:top-3"
+		>
 			<button
 				on:click={() => clearAll()}
 				class="flex flex-col items-center text-gray-300 hover:text-white"
