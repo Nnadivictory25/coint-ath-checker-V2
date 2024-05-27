@@ -116,7 +116,7 @@
 </nav>
 
 <section class="text-white">
-	<!-- ! SEARCH -->
+	<!-- !! SEARCH -->
 	<div>
 		<p class="flex items-center justify-center gap-2 pt-4 text-center text-xl font-semibold">
 			SEARCH <svg
