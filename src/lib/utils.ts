@@ -2,6 +2,7 @@ import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { cubicOut } from 'svelte/easing';
 import type { TransitionConfig } from 'svelte/transition';
+import { dev } from '$app/environment';
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
@@ -55,7 +56,9 @@ export const flyAndScale = (
 	};
 };
 
-let API_URL = 'http://localhost:8787';
+let API_URL = dev
+	? 'http://localhost:8787'
+	: 'https://portfolio-ath-checker-worker.nnadivictory316.workers.dev';
 
 export const getMatchingCoins = async ({
 	query,
