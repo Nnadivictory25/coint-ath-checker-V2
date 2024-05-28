@@ -18,7 +18,7 @@
 			const coinId = coin.id;
 			addedWalletCoins.update((coins) => coins.filter((coin) => coin.id !== coinId));
 			if (browser) {
-				localStorage.seyt
+				localStorage.setItem('walletCoins', JSON.stringify($addedWalletCoins));
 			}
 		}
 	}
